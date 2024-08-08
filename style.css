@@ -24,7 +24,7 @@
     --rose50: hsl(330, 100%, 98%);
     --textFont: 1rem;
     --mainBorder: 1px solid hsl(30, 54%, 90%);
-    --mainMargin: 20px;
+    --mainMargin: 25px;
 }
 
 body {
@@ -56,7 +56,7 @@ ol {
 }
 
 .card {
-    width: 500px;
+    width: 600px;
     background-color: var(--white);
     border-radius: 10px;
     padding-bottom: var(--mainMargin);
@@ -99,7 +99,7 @@ ol {
 }
 
 .card__rec-name {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 400;
     color: var(--stone900);
 }
