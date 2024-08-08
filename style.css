@@ -22,19 +22,32 @@
     --brown800: hsl(14, 45%, 36%);
     --rose800: hsl(332, 51%, 32%);
     --rose50: hsl(330, 100%, 98%);
-    --textFont: .7rem;
+    --textFont: 1rem;
     --mainBorder: 1px solid hsl(30, 54%, 90%);
+    --mainMargin: 20px;
 }
 
 body {
     width: 100%;
     background-color: var(--stone100);
-    padding: 10px;
+    padding: 110px 10px;
     font-family: "Outfit", sans-serif;
     font-size: var(--textFont);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        padding: 0;
+    }
 }
 
 ul,
@@ -43,55 +56,76 @@ ol {
 }
 
 .card {
-    width: 360px;
+    width: 500px;
     background-color: var(--white);
-    border-radius: 6px;
-    padding: 20px;
+    border-radius: 10px;
+    padding-bottom: var(--mainMargin);
 }
 
 @media (max-width: 375px) {
-    body {
-        padding: 0;
-    }
     .card {
         width: 100%;
         border-radius: 0;
     }
 }
 
-.card__img {
-    width: 100%;
+.card__sec {
+    margin-inline: var(--mainMargin)
+}
+
+.card__desc {
     border-radius: inherit;
+}
+
+.card__img {
+    width: calc(100% - var(--mainMargin) * 2);
+    height: fit-content;
+    border-radius: inherit;
+    margin: var(--mainMargin) var(--mainMargin) 0;
+}
+
+@media (max-width: 375px) {
+    .card__img {
+        width: 100%;
+        margin: 0;
+    }
 }
 
 .card__rec-name,
 .card__sub-title {
     font-family: "Young Serif", serif;
     text-transform: capitalize;
-    margin-block: 10px;
+    margin-block: var(--mainMargin);
 }
 
 .card__rec-name {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: var(--stone900);
+}
+
+.card__rec-desc {
+    color: var(--stone600);
 }
 
 .card__prep-time {
     background-color: var(--rose50);
-    padding: 10px;
-    margin-block: 10px;
-    border-radius: 6px;
-    line-height: 1.8;
+    padding: 20px;
+    margin: var(--mainMargin);
+    border-radius: 10px;
+    line-height: 1.9;
     color: var(--stone600);
 }
 
-.card__prep-time h3 {
-    font-size: .8rem;
+.card__prep-time h2 {
+    font-size: 1.1rem;
     color: var(--rose800);
+    line-height: 1;
+    margin-bottom: 10px;
 }
 
-.card__prep-time h4,
-.card__instructions h4 {
+.card__prep-time h3,
+.card__instructions h3 {
     display: inline-block;
     font-size: var(--textFont);
     margin-left: 10px;
@@ -100,14 +134,19 @@ ol {
 .card__sub-title {
     color: var(--brown800);
     font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1;
 }
 
 .card__ingred,
 .card__instructions {
     border-bottom: var(--mainBorder);
     padding-bottom: 10px;
-    line-height: 1.8;
+    line-height: 1.9;
     color: var(--stone600);
+}
+
+.card__instructions {
     font-weight: 700;
 }
 
@@ -122,7 +161,7 @@ table {
 
 table caption {
     text-align: left;
-    margin-bottom: 5px;
+    margin-bottom: var(--mainMargin);
 }
 
 table tr:not(:last-of-type) td {
